@@ -49,6 +49,7 @@ var joinCmd = &cobra.Command{
 	Short: "Unir archivos más pequeños al archivo original",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
+		// La función JoinFiles ahora necesita el nombre del archivo original, no la carpeta.
 		if err := core.JoinFiles(args[0]); err != nil {
 			fmt.Println("Error:", err)
 		}
